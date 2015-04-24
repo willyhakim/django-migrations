@@ -1,19 +1,25 @@
-<!DOCTYPE html>
-<html>
-<head>
-	<title>Bloggy: a blog app</title>
-</head>
-<body>
-<h1>Bloggy: a blog app</h1>
-{% if latest_posts %}
-<ul>
-{% for post in latest_posts %}
-	<h3><a href="/blog/{{ post.id }}">{{ post.title }}</a></h3>
-	<p><em>{{ post.created_at }}</em></p>
-	<p>{{ post.content }}</p>
-	<br>
-{% endfor %}
-</ul>
-{% endif %}
-</body>
-</html>
+{% extends 'blog/base.html' %}
+
+{% block content %}
+<div class="row">
+	<div class="col-md-6">
+	{% if latest_posts %}
+	<ul>
+	{% for post in latest_posts %}
+		<h3><a href="/blog/{{ post.title }}">{{ post.title }}</a></h3>
+		<p><em>{{ post.created_at }}</em></p>
+		<p>{{ post.content }}</p>
+		<br>
+	{% endfor %}
+	</ul>
+	{% endif %}
+</div>
+<div class="col-md-4">
+	<h4>Must see:</h4>
+	<ul>
+	{% for popular_post in popular_posts %}
+		<li><<a href="/blog/{{ popular_post.title }}">{{ popular_post.title }}</a></li>
+	{% endfor %}
+	</ul>
+</div>
+{% endblock %}

@@ -45,6 +45,9 @@ INSTALLED_APPS = (
     #local apps
     'historical_data',
     'blog',
+
+    #
+    'django_forms_bootstrap',
 )
 
 MIDDLEWARE_CLASSES = (
@@ -88,5 +91,9 @@ USE_TZ = True
 
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/1.7/howto/static-files/
-
+STATIC_ROOT = os.path.join(PROJECT_ROOT, 'static')
 STATIC_URL = '/static/'
+
+#Media files(users images, etc)
+MEDIA_ROOT = os.path.join(PROJECT_ROOT, 'media')
+MEDIA_URL = '/media/'

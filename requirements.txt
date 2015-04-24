@@ -1,3 +1,9 @@
 Django==1.7.7
+django-forms-bootstrap==3.0.1
+django-organizations==0.5.1
+django-uuslug==1.0.5
 html5lib==0.999
+Pillow==2.8.1
+python-slugify==1.0.2
 six==1.9.0
+Unidecode==0.4.17
